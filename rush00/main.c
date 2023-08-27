@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kethouve <kethouve@student.42perpignan.fr> +#+  +:+       +#+        */
+/*   By: kethouve <kethouve@42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 13:12:12 by kethouve          #+#    #+#             */
-/*   Updated: 2023/08/24 15:15:00 by kethouve         ###   ########.fr       */
+/*   Created: 2023/08/26 10:15:31 by kethouve          #+#    #+#             */
+/*   Updated: 2023/08/26 10:21:12 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+int	main()
 {
-	write(1, &c, 1);
+	rush(5, 5);
+	return (0);
 }

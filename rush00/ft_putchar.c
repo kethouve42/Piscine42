@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kethouve <kethouve@student.42perpignan.fr> +#+  +:+       +#+        */
+/*   By: kethouve <kethouve@42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 13:12:12 by kethouve          #+#    #+#             */
-/*   Updated: 2023/08/24 15:15:00 by kethouve         ###   ########.fr       */
+/*   Created: 2023/08/26 10:25:49 by kethouve          #+#    #+#             */
+/*   Updated: 2023/08/26 12:32:26 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_putchar(char del, char derl, char mel, char mrel)
 {
-	write(1, &c, 1);
+	del = '0';
+	derl = '|';
+	mel = '-';
+	mrel = ' ';
 }
