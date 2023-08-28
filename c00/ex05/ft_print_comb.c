@@ -6,7 +6,7 @@
 /*   By: kethouve <kethouve@42perpignan.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 15:42:06 by kethouve          #+#    #+#             */
-/*   Updated: 2023/08/26 14:03:13 by kethouve         ###   ########.fr       */
+/*   Updated: 2023/08/28 09:51:09 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,4 @@ void	ft_print_comb(void)
 		}
 		a++;
 	}
-}
-
-int	main(void)
-{
-	ft_print_comb();
-	return (0);
 }

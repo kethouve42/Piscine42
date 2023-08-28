@@ -64,7 +64,7 @@ void rush(int x, int y) /*rush is launch with the parameter in main here 10 for 
 
 int main()         /*main star the programme*/
 {
-    rush(10, 7);   /*main call the function rush with 10 and 7 as parameter*/
+    rush(2, 2);   /*main call the function rush with 10 and 7 as parameter*/
     return 0;
 }
 
