@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kethouve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/28 15:17:50 by kethouve          #+#    #+#             */
-/*   Updated: 2023/08/29 16:05:10 by kethouve         ###   ########.fr       */
+/*   Created: 2023/08/28 18:33:14 by kethouve          #+#    #+#             */
+/*   Updated: 2023/08/29 16:03:22 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include <stdio.h>*/
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	i;
-
-	i = 0;
-	while (src[i])
+	n = 0;
+	while (src[n])
 	{
-		dest[i] = src[i];
-		i++;
+		dest[n] = src[n];
+		n++;
 	}
-	dest[i] = '\0';
+	dest[n] = '\0';
 	return (dest);
 }
 /*
-int	main(void)
+int	main()
 {
-	char	dest[] = "Epic fail";
-	char	src[] = "Success";
-	printf("%s\n%s\n%s\n", src, ft_strcpy(dest, src), dest);
+	char	dest[] = "failed";
+	char	src[] = "success";
+	unsigned int	n = 0;
+
+	printf("%s\n%s\n%s\n", src, ft_strncpy(dest, src, n), dest);
 }*/

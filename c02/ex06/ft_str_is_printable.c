@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kethouve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/28 15:17:50 by kethouve          #+#    #+#             */
-/*   Updated: 2023/08/29 16:05:10 by kethouve         ###   ########.fr       */
+/*   Created: 2023/08/29 16:28:45 by kethouve          #+#    #+#             */
+/*   Updated: 2023/08/29 16:42:01 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include <stdio.h>*/
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_str_is_printable(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (src[i])
+	while (str[i] != 0)
 	{
-		dest[i] = src[i];
+		if (!((str[i] > 32 && str[i] < 127)))
+		{
+			return (0);
+		}
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (1);
 }
 /*
-int	main(void)
+int     main(void)
 {
-	char	dest[] = "Epic fail";
-	char	src[] = "Success";
-	printf("%s\n%s\n%s\n", src, ft_strcpy(dest, src), dest);
+        printf("%s\n%s\n",
+                        ft_str_is_printable("")?"OK":"Fail",
+                        ft_str_is_printable("abc\007dABCD")?"OK":"Fail");
 }*/
