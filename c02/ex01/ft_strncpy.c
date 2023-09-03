@@ -6,7 +6,7 @@
 /*   By: kethouve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 18:33:14 by kethouve          #+#    #+#             */
-/*   Updated: 2023/08/29 16:03:22 by kethouve         ###   ########.fr       */
+/*   Updated: 2023/09/02 18:19:29 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,19 @@
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	n = 0;
-	while (src[n])
+	unsigned int	i;
+
+	i = 0;
+	while (src[i] != '\0' && i < n)
 	{
-		dest[n] = src[n];
-		n++;
+		dest[i] = src[i];
+		i++;
 	}
-	dest[n] = '\0';
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
 	return (dest);
 }
 /*
@@ -28,7 +34,8 @@ int	main()
 {
 	char	dest[] = "failed";
 	char	src[] = "success";
-	unsigned int	n = 0;
+	unsigned int	n = 3;
 
-	printf("%s\n%s\n%s\n", src, ft_strncpy(dest, src, n), dest);
+	ft_strncpy(dest, src, n);
+	printf("%s\n%s\n", src, dest);
 }*/

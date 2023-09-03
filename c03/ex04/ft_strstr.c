@@ -1,44 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kethouve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 14:02:59 by kethouve          #+#    #+#             */
-/*   Updated: 2023/08/31 10:50:24 by kethouve         ###   ########.fr       */
+/*   Created: 2023/08/31 11:30:02 by kethouve          #+#    #+#             */
+/*   Updated: 2023/09/03 16:42:15 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include <stdio.h>
 #include <string.h>*/
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	j = 0;
-	while (dest[i] != 0)
+	while (str[i] != '\0')
 	{
-		dest++;
+		j = 0;
+		while (to_find[j] != '\0' && str[i + j] == to_find[j])
+		{
+			j++;
+		}
+		if (to_find[j] == '\0')
+		{
+			return (&str[i]);
+		}
+		i++;
 	}
-	while (src[j] != 0)
-	{
-		dest[i + j] = src[j];
-		dest++;
-		src++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	return (0);
 }
 /*
 int	main(void)
 {
-	char	dest[] = "Hello";
-	char	src[] = "World";
+	char	str[] = "Hello World";
+	char	to_find[] = "World";
+	char	*c = ft_strstr(str, to_find);
 
-	ft_strcat(dest, src);
-	printf("%s", dest);
+	printf("%s", c);
 }*/

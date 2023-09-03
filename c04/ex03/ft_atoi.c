@@ -1,44 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kethouve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 14:02:59 by kethouve          #+#    #+#             */
-/*   Updated: 2023/08/31 10:50:24 by kethouve         ###   ########.fr       */
+/*   Created: 2023/09/02 10:42:57 by kethouve          #+#    #+#             */
+/*   Updated: 2023/09/03 16:39:47 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
-#include <string.h>*/
-
-char	*ft_strcat(char *dest, char *src)
+int	ft_atoi(char *str)
 {
 	int	i;
-	int	j;
+	int	value;
+	int	sign;
 
 	i = 0;
-	j = 0;
-	while (dest[i] != 0)
+	value = 0;
+	sign = 1;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 	{
-		dest++;
+		i++;
 	}
-	while (src[j] != 0)
+	while (str[i] == '-' || str[i] == '+')
 	{
-		dest[i + j] = src[j];
-		dest++;
-		src++;
+		if (str[i] == '-')
+		{
+			sign *= -1;
+		}
+		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		value = value * 10 + str[i] - 48;
+		i++;
+	}
+	return (value * sign);
 }
 /*
+#include <stdio.h>
 int	main(void)
 {
-	char	dest[] = "Hello";
-	char	src[] = "World";
-
-	ft_strcat(dest, src);
-	printf("%s", dest);
+	char	str[] = "    ---+---1234ab567";
+	printf("%d", ft_atoi(str));
 }*/

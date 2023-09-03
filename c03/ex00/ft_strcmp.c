@@ -6,7 +6,7 @@
 /*   By: kethouve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 10:15:30 by kethouve          #+#    #+#             */
-/*   Updated: 2023/08/30 11:42:27 by kethouve         ###   ########.fr       */
+/*   Updated: 2023/09/03 16:40:56 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,14 @@
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	int	cmp;
+	int	i;
 
-	cmp = strcmp(s1, s2);
-	return (cmp);
+	i = 0;
+	while (s1[i] && s1[i] == s2[i])
+	{
+		i++;
+	}
+	return (s1[i] - s2[i]);
 }
 /*
 int	main(void)
@@ -26,8 +30,5 @@ int	main(void)
 	char	s1[] = "hello";
 	char	s2[] = "heTlo";
 
-	int	cmp;
-
-	cmp = ft_strcmp(s1, s2);
-	printf("%d", cmp);
+	printf("%d", ft_strcmp(s1, s2));
 }*/

@@ -1,44 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kethouve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 14:02:59 by kethouve          #+#    #+#             */
-/*   Updated: 2023/08/31 10:50:24 by kethouve         ###   ########.fr       */
+/*   Created: 2023/09/03 18:06:03 by kethouve          #+#    #+#             */
+/*   Updated: 2023/09/03 18:07:52 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
-#include <string.h>*/
+#include <unistd.h>
 
-char	*ft_strcat(char *dest, char *src)
+void	ft_print(char *string)
 {
 	int	i;
-	int	j;
+	char	c;
 
 	i = 0;
-	j = 0;
-	while (dest[i] != 0)
+	while (string[i])
 	{
-		dest++;
+		c = string[i];
+		write(1, &c, 1);
+		i++;
 	}
-	while (src[j] != 0)
-	{
-		dest[i + j] = src[j];
-		dest++;
-		src++;
-	}
-	dest[i] = '\0';
-	return (dest);
 }
-/*
-int	main(void)
-{
-	char	dest[] = "Hello";
-	char	src[] = "World";
 
-	ft_strcat(dest, src);
-	printf("%s", dest);
-}*/
+int	main(int argc, char *argv[])
+{
+	int	j;
+
+	j = 1;
+	while (j < argc)
+	{
+		j++;
+	}
+	while (j > 1)
+	{
+		ft_print(argv[j]);
+		write(1, "\n", 1);
+		j--;
+	}
+	return (0);
+}

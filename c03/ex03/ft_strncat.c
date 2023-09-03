@@ -1,44 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kethouve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 14:02:59 by kethouve          #+#    #+#             */
-/*   Updated: 2023/08/31 10:50:24 by kethouve         ###   ########.fr       */
+/*   Created: 2023/08/30 17:46:25 by kethouve          #+#    #+#             */
+/*   Updated: 2023/08/31 11:26:06 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include <stdio.h>
 #include <string.h>*/
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	i;
-	int	j;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
 	j = 0;
 	while (dest[i] != 0)
 	{
-		dest++;
+		i++;
 	}
-	while (src[j] != 0)
+	while (src[j] != 0 && j < nb)
 	{
 		dest[i + j] = src[j];
-		dest++;
-		src++;
+		j++;
 	}
-	dest[i] = '\0';
+	dest[i + j] = '\0';
 	return (dest);
 }
 /*
-int	main(void)
+int     main(void)
 {
-	char	dest[] = "Hello";
-	char	src[] = "World";
+        char    dest[] = "Hello";
+        char    src[] = "World";
+	unsigned int nb = 3;
 
-	ft_strcat(dest, src);
-	printf("%s", dest);
+        ft_strncat(dest, src, nb);
+        printf("%s", dest);
 }*/

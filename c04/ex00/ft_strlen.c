@@ -1,44 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kethouve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 14:02:59 by kethouve          #+#    #+#             */
-/*   Updated: 2023/08/31 10:50:24 by kethouve         ###   ########.fr       */
+/*   Created: 2023/08/31 13:56:26 by kethouve          #+#    #+#             */
+/*   Updated: 2023/08/31 14:05:53 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
-#include <string.h>*/
+/*#include <stdio.h>*/
 
-char	*ft_strcat(char *dest, char *src)
+int	ft_strlen(char *src)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
-	while (dest[i] != 0)
+	while (src[i])
 	{
-		dest++;
+		i++;
 	}
-	while (src[j] != 0)
-	{
-		dest[i + j] = src[j];
-		dest++;
-		src++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	return (i);
 }
 /*
 int	main(void)
 {
-	char	dest[] = "Hello";
-	char	src[] = "World";
+	char	src[] = "hello";
 
-	ft_strcat(dest, src);
-	printf("%s", dest);
+	printf("%d", ft_strlen(src));
 }*/

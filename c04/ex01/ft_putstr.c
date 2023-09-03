@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kethouve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 14:02:59 by kethouve          #+#    #+#             */
-/*   Updated: 2023/08/31 10:50:24 by kethouve         ###   ########.fr       */
+/*   Created: 2023/08/31 14:10:07 by kethouve          #+#    #+#             */
+/*   Updated: 2023/08/31 14:25:23 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
-#include <string.h>*/
+/*#include <unistd.h>*/
 
-char	*ft_strcat(char *dest, char *src)
+void	ft_putstr(char *str)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
-	while (dest[i] != 0)
+	while (str[i])
 	{
-		dest++;
+		write(1, &str[i], 1);
+		i++;
 	}
-	while (src[j] != 0)
-	{
-		dest[i + j] = src[j];
-		dest++;
-		src++;
-	}
-	dest[i] = '\0';
-	return (dest);
 }
 /*
 int	main(void)
 {
-	char	dest[] = "Hello";
-	char	src[] = "World";
-
-	ft_strcat(dest, src);
-	printf("%s", dest);
+	char	str[] = "HelloWorld";
+	ft_putstr(str);
 }*/

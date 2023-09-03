@@ -1,44 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kethouve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 14:02:59 by kethouve          #+#    #+#             */
-/*   Updated: 2023/08/31 10:50:24 by kethouve         ###   ########.fr       */
+/*   Created: 2023/09/03 14:57:15 by kethouve          #+#    #+#             */
+/*   Updated: 2023/09/03 16:39:09 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
-#include <string.h>*/
+#include <unistd.h>
 
-char	*ft_strcat(char *dest, char *src)
+void	ft_putchar(char n)
 {
-	int	i;
-	int	j;
+	write(1, &n, 1);
+}
 
-	i = 0;
-	j = 0;
-	while (dest[i] != 0)
+void	ft_putnbr(int nb)
+{
+	if (nb < 0)
 	{
-		dest++;
+		ft_putchar('-');
+		nb = nb * -1;
 	}
-	while (src[j] != 0)
+	if (nb >= 10)
 	{
-		dest[i + j] = src[j];
-		dest++;
-		src++;
+		ft_putnbr(nb / 10);
 	}
-	dest[i] = '\0';
-	return (dest);
+	ft_putchar(nb % 10 + '0');
 }
 /*
 int	main(void)
 {
-	char	dest[] = "Hello";
-	char	src[] = "World";
+	int	number;
 
-	ft_strcat(dest, src);
-	printf("%s", dest);
+	number = -42;
+	ft_putnbr(number);
+	return (0);
 }*/
