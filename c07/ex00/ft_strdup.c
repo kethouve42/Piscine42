@@ -1,41 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_params.c                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kethouve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/03 18:06:03 by kethouve          #+#    #+#             */
-/*   Updated: 2023/09/04 10:24:37 by kethouve         ###   ########.fr       */
+/*   Created: 2023/09/04 11:24:54 by kethouve          #+#    #+#             */
+/*   Updated: 2023/09/04 17:18:59 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_print(char *string)
-{
-	int	i;
-	char	c;
-
-	i = 0;
-	while (string[i])
-	{
-		c = string[i];
-		write(1, &c, 1);
-		i++;
-	}
-}
-
-int	main(int argc, char *argv[])
+int	ft_count(char *str)
 {
 	int	j;
 
-	j = argc - 1;
-	while (j > 0)
+	j = 0;
+	while (str[j])
 	{
-		ft_print(argv[j]);
-		write(1, "\n", 1);
-		j--;
+		j++;
 	}
-	return (0);
+	return (j);
+}
+
+char	*ft_strdup(char *src)
+{
+	int		i;
+	char	*dest;
+
+	i = 0;
+	dest = malloc((ft_count(src)) * sizeof(char));
+	if (!dest)
+	{
+		return (NULL);
+	}
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	return (dest);
+	dest[i] = 0;
+}
+
+#include <stdio.h>
+
+int	main(void)
+{
+	char	src[] = "HelloWorld";
+
+	printf("%s", ft_strdup(src));
 }
