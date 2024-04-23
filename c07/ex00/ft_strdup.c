@@ -5,22 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kethouve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 11:24:54 by kethouve          #+#    #+#             */
-/*   Updated: 2023/09/04 17:18:59 by kethouve         ###   ########.fr       */
+/*   Created: 2023/09/06 12:24:15 by kethouve          #+#    #+#             */
+/*   Updated: 2023/09/06 12:54:22 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_count(char *str)
+int	ft_strlen(char *src)
 {
 	int	j;
 
 	j = 0;
-	while (str[j])
-	{
+	while (src[j])
 		j++;
-	}
 	return (j);
 }
 
@@ -30,25 +28,21 @@ char	*ft_strdup(char *src)
 	char	*dest;
 
 	i = 0;
-	dest = malloc((ft_count(src)) * sizeof(char));
+	dest = malloc(ft_strlen(src) * sizeof(char));
 	if (!dest)
-	{
-		return (NULL);
-	}
+		return (0);
 	while (src[i])
 	{
 		dest[i] = src[i];
 		i++;
 	}
 	return (dest);
-	dest[i] = 0;
+	dest = 0;
 }
 
-#include <stdio.h>
-
+/*#include <stdio.h>
 int	main(void)
 {
-	char	src[] = "HelloWorld";
-
+	char	src[] = "HelloWorld Hello";
 	printf("%s", ft_strdup(src));
-}
+}*/

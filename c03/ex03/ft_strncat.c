@@ -6,12 +6,11 @@
 /*   By: kethouve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 17:46:25 by kethouve          #+#    #+#             */
-/*   Updated: 2023/08/31 11:26:06 by kethouve         ###   ########.fr       */
+/*   Updated: 2023/09/05 12:13:10 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
-#include <string.h>*/
+/*#include <stdio.h>*/
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {

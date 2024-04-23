@@ -6,7 +6,7 @@
 /*   By: kethouve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 10:42:57 by kethouve          #+#    #+#             */
-/*   Updated: 2023/09/03 18:19:40 by kethouve         ###   ########.fr       */
+/*   Updated: 2023/09/05 12:38:58 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ int	ft_atoi(char *str)
 	}
 	return (value * sign);
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
 	char	str[] = "    ---+---1234ab567";
 	printf("%d", ft_atoi(str));
-}
+}*/

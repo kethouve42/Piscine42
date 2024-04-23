@@ -6,12 +6,9 @@
 /*   By: kethouve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 11:30:02 by kethouve          #+#    #+#             */
-/*   Updated: 2023/09/03 16:42:15 by kethouve         ###   ########.fr       */
+/*   Updated: 2023/09/06 10:27:26 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*#include <stdio.h>
-#include <string.h>*/
 
 char	*ft_strstr(char *str, char *to_find)
 {
@@ -19,6 +16,7 @@ char	*ft_strstr(char *str, char *to_find)
 	int	j;
 
 	i = 0;
+	j = 0;
 	while (str[i] != '\0')
 	{
 		j = 0;
@@ -34,11 +32,13 @@ char	*ft_strstr(char *str, char *to_find)
 	}
 	return (0);
 }
-/*
+
+/*#include <stdio.h>
+
 int	main(void)
 {
-	char	str[] = "Hello World";
-	char	to_find[] = "World";
+	char	str[] = "HelloWorldHello";
+	char	to_find[] = "";
 	char	*c = ft_strstr(str, to_find);
 
 	printf("%s", c);

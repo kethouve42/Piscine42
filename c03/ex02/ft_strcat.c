@@ -6,7 +6,7 @@
 /*   By: kethouve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:02:59 by kethouve          #+#    #+#             */
-/*   Updated: 2023/08/31 10:50:24 by kethouve         ###   ########.fr       */
+/*   Updated: 2023/09/06 16:03:02 by kethouve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,16 @@ char	*ft_strcat(char *dest, char *src)
 
 	i = 0;
 	j = 0;
-	while (dest[i] != 0)
+	while (dest[i] != '\0')
 	{
-		dest++;
+		i++;
 	}
-	while (src[j] != 0)
+	while (src[j] != '\0')
 	{
 		dest[i + j] = src[j];
-		dest++;
-		src++;
+		j++;
 	}
-	dest[i] = '\0';
+	dest[i + j] = '\0';
 	return (dest);
 }
 /*
